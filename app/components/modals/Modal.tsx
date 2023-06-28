@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from 'react-icons/io'
 import { Button } from "../Button";
+
 interface ModalProps {
   isOpen?: boolean;
   onClose: () => void;
@@ -90,7 +91,7 @@ export default function Modal({
                   className="p-1 border-0 hover:opacity-70 transition absolute left-9">
                   <IoMdClose size={18} />
                 </button>
-                <div className="text-lg font-semibold">
+                <div className="text-lg font-bold">
                   {title}
                 </div>
               </div>
