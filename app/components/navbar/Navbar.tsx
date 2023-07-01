@@ -4,8 +4,16 @@ import { Container } from "../Container";
 import { Logo } from "./Logo";
 import { Search } from "./Search";
 import { UserMenu } from "./UserMenu";
+import { SafeUser } from "@/app/types";
 
-export default function Navbar() {
+interface NavbarProps {
+  currentUser?: SafeUser | null;
+}
+
+export default function Navbar({ currentUser }: NavbarProps) {
+
+  console.log(currentUser)
+
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm">
       <div
@@ -18,7 +26,7 @@ export default function Navbar() {
           >
             <Logo />
             <Search />
-            <UserMenu />
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
