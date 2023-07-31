@@ -92,7 +92,7 @@ export function ListingCard({ data, reservation, onAction, actionId = '', action
           </div>
         </div>
         <div className="font-semibold text-lg">
-          {location?.region},{''}{location?.label}
+          {location?.region},{' '}{location?.label}
         </div>
         <div
           className="font-light text-neutral-500"
