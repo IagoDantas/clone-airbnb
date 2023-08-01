@@ -41,6 +41,12 @@ export function ListingReservations({
         </div>
       </div>
       <hr />
+      <Calendar
+        value={dateRange}
+        disabledDates={disabledDates}
+        onChange={(value) => onChangeDate(value.selection)}
+      />
+      <hr />
       <div>
         <div className='p-4'>
           <Button
@@ -50,12 +56,6 @@ export function ListingReservations({
           />
         </div>
       </div>
-      <Calendar
-        value={dateRange}
-        disabledDates={disabledDates}
-        onChange={(value) => onChangeDate(value.selection)}
-      />
-      <hr />
       <div
         className='flex flex-row items-center justify-between p-4 font-semibold text-lg'
       >
