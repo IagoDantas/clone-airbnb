@@ -1,6 +1,7 @@
 'use client'
 import toast from "react-hot-toast";
 import { Range } from "react-date-range";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { Container } from "@/app/components/Container";
 import { ListingHead } from "@/app/components/listings/ListingHead";
 import { ListingInfo } from "@/app/components/listings/ListingInfo";
@@ -11,7 +12,6 @@ import { SafeListing, SafeReservation, SafeUser } from "@/app/types";
 import axios from "axios";
 import { differenceInCalendarDays, eachDayOfInterval } from "date-fns";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
 
 
 const initialDateRange = {
@@ -64,8 +64,7 @@ export function ListingClient({ reservations = [], listing, currentUser }: Listi
       .then(() => {
         toast.success('Listing reserved')
         setDateRange(initialDateRange)
-        //Redirect to /trips
-        router.refresh()
+        router.push('/trips')
       })
       .catch(() => {
         toast.error('Something went wrong')
